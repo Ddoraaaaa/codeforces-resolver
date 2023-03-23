@@ -9,6 +9,10 @@ const AppContent: React.FC = () => {
 
   const handleFormSubmit = () => {
     setScreen('rankList');
+    const eventList:string[] = contestInfo.contestLog.split("\n");
+    for(var event of eventList) {
+      console.log(event)
+    }
   };
 
   const handleBack = () => {

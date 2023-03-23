@@ -1,7 +1,22 @@
 import React, { createContext, useContext, useState } from 'react';
 
+export interface Problems {
+    cntSub: number;
+    lastSub: number;
+    accepted: boolean;
+}
+
+export interface Teams {
+    teamName: string;
+    solved: number;
+    penalty: number;
+    problems: Problems[];
+}
+
 interface ContestInfo {
   contestLog: string;
+  eventList: string[];
+  teamList: Teams[]
   freezeTime: number;
   gold: number;
   silver: number;
@@ -15,6 +30,8 @@ interface ContestContextData {
 
 const defaultContestInfo: ContestInfo = {
   contestLog: '',
+  eventList: [],
+  teamList: [],
   freezeTime: 0,
   gold: 1,
   silver: 1,
