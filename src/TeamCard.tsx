@@ -14,8 +14,8 @@ const TeamCard:React.FC<TeamCardProps> = ({index, team, focus}) => {
     transform: `translateY(${index*130}px)`,
     config: {
         mass: 20,
-        friction: 5,
-        tension: 70,
+        friction: 3,
+        tension: 30,
         clamp : true
       },
   });
@@ -27,7 +27,7 @@ const TeamCard:React.FC<TeamCardProps> = ({index, team, focus}) => {
       style={spring}
     >                
         <div className={focus ? "team-card lighter" : "team-card"}>
-        <div className="team-name">{team.teamName}</div>
+        <div className="team-name">#{index+1}: {team.teamName}</div>
         <div className="team-info">
             <div className="team-solved">{team.solved} problems solved</div>
             <div className="team-penalty">Penalty: {Math.floor(team.penalty/1)}</div>
