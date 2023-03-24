@@ -17,6 +17,7 @@ export interface Teams {
 }
 
 export interface ContestInfo {
+  lastMoved: number;
   curTeam: number
   name: string;
   contestLog: string;
@@ -34,6 +35,7 @@ interface ContestContextData {
 }
 
 const defaultContestInfo: ContestInfo = {
+  lastMoved: 0,
   curTeam: 0,
   name: "placeholder",
   contestLog: '',

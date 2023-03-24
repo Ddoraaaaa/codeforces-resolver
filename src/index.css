@@ -71,3 +71,12 @@
 .problem-correct{
   background-color: #3eb03c;
 }
+
+.div-item {
+  margin-left: 0vw;
+  position:absolute;
+  width: 98vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
