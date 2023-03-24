@@ -13,9 +13,9 @@ const TeamCard:React.FC<TeamCardProps> = ({index, team, focus}) => {
   const spring = useSpring({
     transform: `translateY(${index*130}px)`,
     config: {
-        mass: 1,
-        friction: 15,
-        tension: 50,
+        mass: 20,
+        friction: 5,
+        tension: 70,
         clamp : true
       },
   });
