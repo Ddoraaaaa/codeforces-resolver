@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useContestContext } from './ContestContext';
+import applyEvents from './utils/ProcessEvents';
 
 interface FormScreenProps {
   onSubmit: () => void;
@@ -16,6 +17,7 @@ export const FormScreen: React.FC<FormScreenProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    applyEvents(formValues);
     setContestInfo(formValues);
     onSubmit();
   };

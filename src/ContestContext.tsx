@@ -4,16 +4,21 @@ export interface Problems {
     cntSub: number;
     lastSub: number;
     accepted: boolean;
+    hidden: boolean;
+    penalty: number;
 }
 
 export interface Teams {
+    teamId: number;
     teamName: string;
     solved: number;
     penalty: number;
     problems: Problems[];
 }
 
-interface ContestInfo {
+export interface ContestInfo {
+  curTeam: number
+  name: string;
   contestLog: string;
   eventList: string[];
   teamList: Teams[]
@@ -29,6 +34,8 @@ interface ContestContextData {
 }
 
 const defaultContestInfo: ContestInfo = {
+  curTeam: 0,
+  name: "placeholder",
   contestLog: '',
   eventList: [],
   teamList: [],

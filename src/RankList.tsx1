@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { useSpring, animated, config } from 'react-spring';
+import { Teams } from './ContestContext';
 import './App.css';
 
-interface DivItemProps {
-  index: number;
-  value: number;
-  onClick: (index: number) => void;
-}
-
-const DivItem: React.FC<DivItemProps> = ({ index, value, onClick }) => {
+const DivItem = (team:Teams) => {
   const spring = useSpring({
-    transform: `translateY(${index * 50}px)`,
+    transform: `translateY(${team.teamId * 50}px)`,
     config: config.stiff,
   });
 
@@ -18,9 +13,14 @@ const DivItem: React.FC<DivItemProps> = ({ index, value, onClick }) => {
     <animated.div
       className="div-item"
       style={spring}
-      onClick={() => onClick(value)}
-    >
-      {value + 1}
+      onClick={() => onClick(team.teamName)}
+    >                
+        Team: {team.teamName}
+        {team.problems.map((problem, index1) => (
+            <div>
+                {problem.penalty}
+            </div>
+        ))}
     </animated.div>
   );
 };
@@ -49,7 +49,6 @@ const App: React.FC = () => {
             key={value}
             index={divOrder.indexOf(value)}
             value={value}
-            onClick={handleClick}
           />
         ))}
       </div>
