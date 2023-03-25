@@ -90,6 +90,20 @@ const applyEvents = (contestInfo:ContestInfo) => {
             }
         }
     }
+    teamList.sort((a: Teams, b: Teams) => {
+        if(a.solved === b.solved) {
+            if(a.penalty > b.penalty) {
+                return 1;
+            }
+            else {
+                return -1;
+            }
+        }
+        if(a.solved < b.solved) {
+            return 1;
+        }
+        else return -1;
+    }) 
     contestInfo.curTeam = teamList.length - 1
     contestInfo.teamList = teamList;
 }
