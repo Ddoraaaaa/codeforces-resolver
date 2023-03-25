@@ -72,6 +72,18 @@
   background-color: #3eb03c;
 }
 
+.gold-medal {
+  background-color: #e0a955;
+}
+
+.silver-medal {
+    background-color: #999999;
+}
+
+.bronze-medal {
+    background-color: #8f632b;
+}
+
 .div-item {
   margin-left: 0vw;
   position:absolute;

@@ -31,7 +31,7 @@ export const FormScreen: React.FC<FormScreenProps> = ({ onSubmit }) => {
       </label>
       <label>
         Domain accounts
-        <textarea name="domainAcc" onChange={handleChange} />
+        <textarea name="domainAcc" placeholder="if empty input '1 | 1 | 1 | 1' or else it will crash lmao im a bad programmer" onChange={handleChange} />
       </label>
       <label>
         Freeze Time:

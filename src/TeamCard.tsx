@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useContestContext } from './ContestContext';
 import { useSpring, animated, config } from 'react-spring';
 import { Teams } from './ContestContext';
 import ProblemItem from './ProblemItem';
+import getMedal from './utils/MedalInfo';
 
 interface TeamCardProps {
     index: number;
@@ -10,6 +12,7 @@ interface TeamCardProps {
 }
 
 const TeamCard:React.FC<TeamCardProps> = ({index, team, focus}) => {
+  const { contestInfo } = useContestContext();
   const spring = useSpring({
     transform: `translateY(${index*130}px)`,
     config: {
@@ -26,7 +29,7 @@ const TeamCard:React.FC<TeamCardProps> = ({index, team, focus}) => {
       className="div-item"
       style={spring}
     >                
-        <div className={focus ? "team-card lighter" : "team-card"}>
+        <div className={focus ? "team-card lighter" : "team-card" + getMedal(index, contestInfo)}>
         <div className="team-name">#{index+1}: {team.teamName}</div>
         <div className="team-info">
             <div className="team-solved">{team.solved} problems solved</div>
