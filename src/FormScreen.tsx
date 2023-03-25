@@ -29,6 +29,10 @@ export const FormScreen: React.FC<FormScreenProps> = ({ onSubmit }) => {
         <textarea name="contestLog" onChange={handleChange} />
       </label>
       <label>
+        Domain accounts
+        <textarea name="domainAcc" onChange={handleChange} />
+      </label>
+      <label>
         Freeze Time:
         <input type="number" name="freezeTime" onChange={handleChange} />
       </label>

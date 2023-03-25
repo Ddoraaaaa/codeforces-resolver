@@ -21,7 +21,9 @@ export interface ContestInfo {
   curTeam: number
   name: string;
   contestLog: string;
+  domainAcc: string;
   eventList: string[];
+  domainAccNames: {[key: string]: string};
   teamList: Teams[]
   freezeTime: number;
   gold: number;
@@ -39,7 +41,9 @@ const defaultContestInfo: ContestInfo = {
   curTeam: 0,
   name: "placeholder",
   contestLog: '',
+  domainAcc: '',
   eventList: [],
+  domainAccNames: {},
   teamList: [],
   freezeTime: 0,
   gold: 1,
