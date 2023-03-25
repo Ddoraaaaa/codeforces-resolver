@@ -12,7 +12,8 @@ export const FormScreen: React.FC<FormScreenProps> = ({ onSubmit }) => {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: name === 'contestLog' ? value : parseInt(value) });
+    console.log(name, value)
+    setFormValues({ ...formValues, [name]: name === 'contestLog' || name === 'domainAcc' ? value : parseInt(value) });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
